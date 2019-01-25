@@ -14,12 +14,11 @@ fireball_img_loc = "images/fireball.png"
 jump_vel = 40
 gravity = 7
 frame_rate = 30
-# background_color = (100, 255, 100)
 bg = pygame.image.load(background_image)
-# player = Mario(123)
 
 RELEASED = True
 WAITING = False
+
 
 def get_key_event(game_over=False):
     _state = None
@@ -36,14 +35,16 @@ def get_key_event(game_over=False):
             elif event.key == pygame.K_RIGHT:
                 _state = "fw"
         elif event.type == pygame.KEYUP:
+            _state = "reset"
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                _state = "halt"
             if game_over:
                 if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                     _state = "restart"
                 elif event.key == pygame.K_ESCAPE:
                     _state = "quit"
-            else:
-                _state = "reset"
     return _state
+
 
 def game_over_screen(screen):
     _font = pygame.font.SysFont('Purisa', 50)
@@ -70,9 +71,21 @@ if __name__ == '__main__':
     screen_w, screen_h = resolution
     wlim, hlim = screen_w - 32, screen_h - 70
 
-    mario = Mario(image=mario_img_loc, resize_to=(32, 32), X=wlim * .1, Y=hlim,
-                  ducked_image=ducking_img_loc, ducked_resize_to=(28, 28),
-                  resolution=resolution, horizontal_step=10, gravity=gravity, jump_vel=jump_vel)
+    mario_properties = {
+        'image': mario_img_loc,
+        'resize_to': (32, 32),
+        'ducked_image': ducking_img_loc,
+        'ducked_resize_to': (28, 28),
+        'X': wlim * .1,
+        'Y': hlim,
+        'resolution': resolution,
+        'horizontal_step': 10,
+        'gravity': gravity,
+        'jump_vel': jump_vel,
+        'gene': None
+    }
+
+    mario = Mario(**mario_properties)
 
     mushroom1 = Mushroom(image=mushroom_img_loc, resize_to=(32, 32), Y=hlim, resolution=resolution)
     mushroom2 = Mushroom(image=mushroom_img_loc, resize_to=(32, 32), Y=hlim, resolution=resolution)
@@ -89,11 +102,15 @@ if __name__ == '__main__':
     quited = False
     t0 = t1 = clock.get_time()
 
-    state = None
+    state = prev_state = None
     while True:
         state = get_key_event(game_over)
         if state == "quit":
             break
+        if state is None:
+            state = prev_state
+        else:
+            prev_state = state
 
         if not game_over:
             mario_group.update(state)

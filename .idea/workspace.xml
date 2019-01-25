@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9297c3e-dad5-4a15-bffb-2625c6260325" name="Default Changelist" comment="" />
+    <list default="true" id="d9297c3e-dad5-4a15-bffb-2625c6260325" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/game_lib/game_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_lib/game_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,42 +38,42 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="32" />
-          <entry key="py" value="9657" />
+          <entry key="py" value="10081" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="32" />
-          <entry key="Python" value="9657" />
+          <entry key="Python" value="10081" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game_lib/game_env.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+            <state relative-caret-position="132">
+              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1548350253797" expanded="true" signature="1367:1548" ph="..." />
-                <marker date="1548350253797" expanded="true" signature="5693:5698" ph="..." />
+                <marker date="1548381369003" expanded="true" signature="1447:1628" ph="..." />
+                <marker date="1548381369003" expanded="true" signature="6019:6024" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+            <state relative-caret-position="284">
+              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
               <folding>
                 <element signature="e#0#82#0" expanded="true" />
-                <marker date="1548351576230" expanded="true" signature="626:1385" ph="..." />
-                <marker date="1548351576230" expanded="true" signature="1414:1945" ph="..." />
+                <marker date="1548381369011" expanded="true" signature="605:1480" ph="..." />
+                <marker date="1548381369011" expanded="true" signature="1509:2040" ph="..." />
               </folding>
             </state>
           </provider>
@@ -96,14 +99,17 @@
       <replace>(32, 32)</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/game_env/mario_env.py" />
         <option value="$PROJECT_DIR$/game_env/game_env.py" />
         <option value="$PROJECT_DIR$/game_lib/mario.py" />
-        <option value="$PROJECT_DIR$/game_lib/game_env.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/game_lib/game_env.py" />
       </list>
     </option>
   </component>
@@ -113,6 +119,7 @@
     <option name="width" value="1879" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -230,7 +237,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30756843" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3069467" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -330,26 +337,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game_lib/game_env.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+        <state relative-caret-position="284">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1548350253797" expanded="true" signature="1367:1548" ph="..." />
-            <marker date="1548350253797" expanded="true" signature="5693:5698" ph="..." />
+            <element signature="e#0#82#0" expanded="true" />
+            <marker date="1548381369011" expanded="true" signature="605:1480" ph="..." />
+            <marker date="1548381369011" expanded="true" signature="1509:2040" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/game_lib/game_env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+        <state relative-caret-position="132">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
           <folding>
-            <element signature="e#0#82#0" expanded="true" />
-            <marker date="1548351576230" expanded="true" signature="626:1385" ph="..." />
-            <marker date="1548351576230" expanded="true" signature="1414:1945" ph="..." />
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1548381369003" expanded="true" signature="1447:1628" ph="..." />
+            <marker date="1548381369003" expanded="true" signature="6019:6024" ph="..." />
           </folding>
         </state>
       </provider>

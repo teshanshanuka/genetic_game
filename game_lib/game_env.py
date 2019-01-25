@@ -6,7 +6,7 @@ from pygame.sprite import Sprite, Group
 
 class Mario(Sprite):
     def __init__(self, image, resize_to, ducked_image, ducked_resize_to, X, Y, resolution, horizontal_step, jump_vel,
-                 gravity):
+                 gravity, gene=None):
         super().__init__()
         self.image1 = pygame.transform.scale(pygame.image.load(image), resize_to)
         self.image2 = pygame.transform.scale(pygame.image.load(ducked_image), ducked_resize_to)
@@ -29,8 +29,10 @@ class Mario(Sprite):
         self.horizontal_step = horizontal_step
         self.jump_vel = jump_vel
         self.gravity = gravity
-        self.jumping = False
+        self.is_jumping = False
         self.is_ducked = False
+        self.is_going_fw = False
+        self.is_going_bw = False
         self.t_jump = 0
 
     def reset_pos(self):
@@ -51,11 +53,14 @@ class Mario(Sprite):
             self.rect.topleft = (x, y + self.ydiff)
             self.is_ducked = True
         elif state == "fw":
-            self.rect.x = min(self.resolution[0] - self.sizeX, self.rect.x + self.horizontal_step)
+            self.is_going_fw = True
         elif state == "bw":
-            self.rect.x = max(0, self.rect.x - self.horizontal_step)
+            self.is_going_bw = True
+        elif state == "halt":
+            self.is_going_fw = False
+            self.is_going_bw = False
         elif state == "jump" and not self.is_ducked:  # can't jump if ducked
-            self.jumping = True
+            self.is_jumping = True
         elif state == "reset" and self.is_ducked:
             x, y = self.rect.topleft
             self.image = self.image1
@@ -65,12 +70,17 @@ class Mario(Sprite):
             self.rect.topleft = (x, y - self.ydiff)
             self.is_ducked = False
 
-        if self.jumping:
+        if self.is_going_fw:
+            self.rect.x = min(self.resolution[0] - self.sizeX, self.rect.x + self.horizontal_step)
+        elif self.is_going_bw:
+            self.rect.x = max(0, self.rect.x - self.horizontal_step)
+
+        if self.is_jumping:
             new_y = self.init_Y - (self.jump_vel * self.t_jump - 0.5 * self.gravity * self.t_jump ** 2)
             if new_y > self.init_Y:
                 self.rect.y = self.init_Y
                 self.t_jump = 0
-                self.jumping = False
+                self.is_jumping = False
             else:
                 self.rect.y = new_y
                 self.t_jump += 1
