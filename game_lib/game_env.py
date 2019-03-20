@@ -5,6 +5,8 @@ from pygame.sprite import Sprite, Group
 
 
 class Mario(Sprite):
+    id = 0
+    """    Mario!    """
     def __init__(self, image, resize_to, ducked_image, ducked_resize_to, X, Y, resolution, horizontal_step, jump_vel,
                  gravity, gene=None):
         super().__init__()
@@ -34,6 +36,12 @@ class Mario(Sprite):
         self.is_going_fw = False
         self.is_going_bw = False
         self.t_jump = 0
+
+        self.id = Mario.id
+        Mario.id += 1
+
+    def __str__(self):
+        return "{}_{}".format(self.__class__.__name__, self.id)
 
     def reset_pos(self):
         x, _ = self.rect.topleft
@@ -85,8 +93,14 @@ class Mario(Sprite):
                 self.rect.y = new_y
                 self.t_jump += 1
 
+    def play_self(self):
+        pass
+
 
 class Mushroom(Sprite):
+    """    Mushroom    """
+    id = 0
+
     def __init__(self, image, resize_to, Y, resolution, released=False):
         super().__init__()
         self.image = pygame.transform.scale(pygame.image.load(image), resize_to)
@@ -94,20 +108,27 @@ class Mushroom(Sprite):
         self.sizeY = pygame.Surface.get_height(self.image)
         self.rect = self.image.get_rect()
         self.rect.topleft = (resolution[0], Y)
+        self.velocity = 0
 
         self.resolution = resolution
         self.reset_pos()
         self.released = released
 
+        self.id = Mushroom.id
+        Mushroom.id += 1
+
+    def __str__(self):
+        return "{}_{}".format(self.__class__.__name__, self.id)
+
     def reset_pos(self):
-        self.velociy = np.random.randint(10, 20)
+        self.velocity = np.random.randint(15, 20)
         self.rect.x = self.resolution[0]
         self.released = False
 
     def update(self):
         if not self.released:
             return
-        new_x = self.rect.x - self.velociy
+        new_x = self.rect.x - self.velocity
         if new_x > 0:
             self.rect.x = new_x
         else:
@@ -115,6 +136,9 @@ class Mushroom(Sprite):
 
 
 class Fireball(Sprite):
+    """    Fireball    """
+    id = 0
+
     def __init__(self, image, resize_to, Y, resolution, released=False):
         super().__init__()
         self.image = pygame.transform.scale(pygame.image.load(image), resize_to)
@@ -122,20 +146,27 @@ class Fireball(Sprite):
         self.sizeY = pygame.Surface.get_height(self.image)
         self.rect = self.image.get_rect()
         self.rect.topleft = (resolution[0], Y)
+        self.velocity = 0
 
         self.resolution = resolution
         self.reset_pos()
         self.released = released
 
+        self.id = Fireball.id
+        Fireball.id += 1
+
+    def __str__(self):
+        return "{}_{}".format(self.__class__.__name__, self.id)
+
     def reset_pos(self):
-        self.velociy = np.random.randint(20, 30)
+        self.velocity = np.random.randint(15, 20)
         self.rect.x = self.resolution[0]
         self.released = False
 
     def update(self):
         if not self.released:
             return
-        new_x = self.rect.x - self.velociy
+        new_x = self.rect.x - self.velocity
         if new_x > 0:
             self.rect.x = new_x
         else:
@@ -154,12 +185,16 @@ class ObstacleGroup(Group):
         released = 0
         for sprite in sprites:
             if sprite.released:
+                # print("released:", sprite)
                 released += 1
                 if not farthest or farthest.rect.x < sprite.rect.x:
                     farthest = sprite
 
         if released == 0:
             sprites[np.random.randint(0, len(sprites))].released = True
+            for sprite in sprites:
+                print(sprite, ":", sprite.released)
+            # print("started")
         elif farthest and farthest.rect.x < self.release_dist:
             while released < self.release_count:
                 idx = np.random.randint(0, len(sprites))
@@ -172,6 +207,7 @@ class ObstacleGroup(Group):
     def reset_pos(self):
         for sprite in self.sprites():
             sprite.reset_pos()
+
 
 class MarioGroup(Group):
     def __init__(self):
