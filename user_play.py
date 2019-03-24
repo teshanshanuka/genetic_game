@@ -1,4 +1,4 @@
-from game_lib.game_env import Mario, Mushroom, Fireball, ObstacleGroup, MarioGroup
+from game_lib.sprites import Mario, Mushroom, Fireball, ObstacleGroup, MarioGroup
 import pygame
 
 resolution = (800, 400)

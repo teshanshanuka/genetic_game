@@ -40,7 +40,7 @@ class Mario(Sprite):
         self.id = Mario.id
         Mario.id += 1
 
-    def __str__(self):
+    def __repr__(self):
         return "{}_{}".format(self.__class__.__name__, self.id)
 
     def reset_pos(self):
@@ -51,7 +51,11 @@ class Mario(Sprite):
         self.rect = self.rect1
         self.rect.topleft = (x, self.init_Y)
 
-    def update(self, state):
+    def update(self, state=None, obstacles=None):
+        # not passing state for autoplaying
+        if not state:
+            state = self.play(obstacles)
+
         if state == "duck" and not self.is_ducked:
             x, y = self.rect.topleft
             self.image = self.image2
@@ -93,8 +97,11 @@ class Mario(Sprite):
                 self.rect.y = new_y
                 self.t_jump += 1
 
-    def play_self(self):
-        pass
+    def play(self, obstacles) -> str:
+        # for sprite in obstacles:
+        #     pass
+        return "state"
+
 
 
 class Mushroom(Sprite):
@@ -117,7 +124,7 @@ class Mushroom(Sprite):
         self.id = Mushroom.id
         Mushroom.id += 1
 
-    def __str__(self):
+    def __repr__(self):
         return "{}_{}".format(self.__class__.__name__, self.id)
 
     def reset_pos(self):
@@ -155,7 +162,7 @@ class Fireball(Sprite):
         self.id = Fireball.id
         Fireball.id += 1
 
-    def __str__(self):
+    def __repr__(self):
         return "{}_{}".format(self.__class__.__name__, self.id)
 
     def reset_pos(self):
@@ -192,8 +199,8 @@ class ObstacleGroup(Group):
 
         if released == 0:
             sprites[np.random.randint(0, len(sprites))].released = True
-            for sprite in sprites:
-                print(sprite, ":", sprite.released)
+            # for sprite in sprites:
+            #     print(sprite, ":", sprite.released)
             # print("started")
         elif farthest and farthest.rect.x < self.release_dist:
             while released < self.release_count:
