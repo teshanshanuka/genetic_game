@@ -55,6 +55,6 @@ if __name__ == "__main__":
     print(players)
     print(obstacles)
 
-    game = GamePlay(players, obstacles, resolution, background_image)
+    game = GamePlay(players, obstacles, resolution, background_image, frame_rate=frame_rate)
     game.play()
 

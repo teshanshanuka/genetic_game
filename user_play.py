@@ -102,7 +102,7 @@ if __name__ == '__main__':
     quited = False
     t0 = t1 = clock.get_time()
 
-    state = prev_state = None
+    state = prev_state = ""
     while True:
         state = get_key_event(game_over)
         if state == "quit":
