@@ -2,7 +2,8 @@ from game_lib.canvas import GamePlay
 from game_lib.sprites import Mario, Mushroom, Fireball, ObstacleGroup, MarioGroup
 import pygame
 
-NO_PLAYERS = 1
+NO_PLAYERS = 2
+BACKPROPEGATION_UPDATE_COUNT = 5
 
 resolution = (800, 400)
 caption = "Mario! :D"
@@ -30,6 +31,7 @@ mario_properties = {
     'resolution': resolution,
     'horizontal_step': 10,
     'gravity': gravity,
+    'max_fail_count': BACKPROPEGATION_UPDATE_COUNT,
     'jump_vel': jump_vel,
     'gene': None
 }
@@ -49,12 +51,12 @@ fireball_properties = {
 }
 
 if __name__ == "__main__":
-    players = [Mario(**mario_properties) for _ in range(NO_PLAYERS)]
+    # players = [Mario(**mario_properties) for _ in range(NO_PLAYERS)]
     obstacles = [Mushroom(**mushroom_properties), Mushroom(**mushroom_properties),
                  Fireball(**fireball_properties), Fireball(**fireball_properties)]
-    print(players)
-    print(obstacles)
+    # print(players)
+    # print(obstacles)
 
-    game = GamePlay(players, obstacles, resolution, background_image, frame_rate=frame_rate)
+    game = GamePlay(NO_PLAYERS, mario_properties, obstacles, resolution, background_image, frame_rate=frame_rate)
     game.play()
 

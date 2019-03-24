@@ -100,9 +100,9 @@ class ObstacleGroup(Group):
 
         if released == 0:
             sprites[np.random.randint(0, len(sprites))].released = True
-            for sprite in sprites:
-                print(sprite, ":", sprite.released)
-            print("started")
+            # for sprite in sprites:
+            #     print(sprite, ":", sprite.released)
+            # print("started")
         elif farthest and farthest.rect.x < self.release_dist:
             while released < self.release_count:
                 idx = np.random.randint(0, len(sprites))
@@ -122,7 +122,7 @@ class Mario(Sprite):
     """    Mario!    """
 
     def __init__(self, image, resize_to, ducked_image, ducked_resize_to, X, Y, resolution, horizontal_step, jump_vel,
-                 gravity, gene=None):
+                 gravity, max_fail_count, gene=None):
         super().__init__()
         self.image1 = pygame.transform.scale(pygame.image.load(image), resize_to)
         self.image2 = pygame.transform.scale(pygame.image.load(ducked_image), ducked_resize_to)
@@ -150,11 +150,14 @@ class Mario(Sprite):
         self.is_going_fw = False
         self.is_going_bw = False
         self.t_jump = 0
+        self.bogus = ((np.random.randint(-35,45),np.random.randint(75,85)),(np.random.randint(-5,5), np.random.randint(95,105)))
 
         self.id = Mario.id
         Mario.id += 1
         self.score = 0
         self.game_over = False
+        self.fail_count = 0
+        self.max_fail_count = max_fail_count
 
         self.init_nn(gene)
 
@@ -162,15 +165,18 @@ class Mario(Sprite):
         return "{}_{}".format(self.__class__.__name__, self.id)
 
     def reset_pos(self):
-        print(self.score)
+        print(self, self.score)
         x, _ = self.rect.topleft
         self.image = self.image1
         self.sizeX = self.sizeX1
         self.sizeY = self.sizeY1
         self.rect = self.rect1
         self.rect.topleft = (x, self.init_Y)
+        self.fail_count += 1
 
     def update(self, arg):
+        if self.fail_count >= self.max_fail_count:
+            return
         if self.game_over:
             self.reset_pos()
             self.score = 0
@@ -240,10 +246,10 @@ class Mario(Sprite):
                 continue
 
             if isinstance(obstacle, Fireball):
-                if -40 < (obstacle.rect.x - self.rect.x) < 80:
+                if self.bogus[0][0] < (obstacle.rect.x - self.rect.x) < self.bogus[0][1]:
                     state = "duck"
             else:  # a mushroom
-                if 0 < (obstacle.rect.x - self.rect.x) < 100:
+                if self.bogus[1][0] < (obstacle.rect.x - self.rect.x) < self.bogus[1][1]:
                     state = "jump"
             if not state:
                 state = "reset"

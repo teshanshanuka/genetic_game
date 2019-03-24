@@ -2,9 +2,8 @@ from game_lib.sprites import *
 
 
 class GamePlay:
-    def __init__(self, players: List[Mario], obstacles: List[Union[Mushroom, Fireball]], resolution, background,
+    def __init__(self, no_players, mario_properties, obstacles: List[Union[Mushroom, Fireball]], resolution, background,
                  frame_rate=30, caption="Mario!"):
-        self.players = players
         self.obstacles = obstacles
         self.frame_rate = frame_rate
 
@@ -20,8 +19,12 @@ class GamePlay:
 
         self.screen.blit(self.background, (0, 0))
 
+        self.players = []
         self.mario_group = MarioGroup()
-        for player in players:
+        for _ in range(no_players):
+            mario_properties['gene'] = self.get_init_gene()
+            player = Mario(**mario_properties)
+            self.players.append(player)
             self.mario_group.add(player)
 
         self.obstacle_group = ObstacleGroup(release_count=2, release_dist=wlim // 2)
@@ -31,9 +34,6 @@ class GamePlay:
     def play(self):
         pygame.init()
         pygame.font.init()
-
-        # for player in self.players:
-        #     print(player)
 
         _state = None
         while True:
@@ -60,6 +60,10 @@ class GamePlay:
             pygame.display.update()
             self.clock.tick(self.frame_rate)
 
+
+        print("\nfinal scores!")
+        for player in self.players:
+            print(player, player.score)
         # self.game_over_screen()
 
     # def game_over_screen(self):
@@ -71,3 +75,9 @@ class GamePlay:
     #     text_surface_2 = _font2.render('Press Enter to restart. ESC to quit', True, (0, 0, 0))
     #     self.screen.blit(text_surface_2, (self.screen_w // 2 - text_surface_2.get_width() // 2,
     #                                       self.screen_h // 2 + 30))
+
+    def get_init_gene(self) -> np.ndarray:
+        pass
+
+    def get_new_gene_pool(self, genes: List[np.ndarray]) -> List[np.ndarray]:
+        pass

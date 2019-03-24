@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9297c3e-dad5-4a15-bffb-2625c6260325" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/game_lib/canvas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/play_alone.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_lib/game_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_lib/sprites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_play.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_lib/canvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_lib/canvas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_lib/sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_lib/sprites.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play_alone.py" beforeDir="false" afterPath="$PROJECT_DIR$/play_alone.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,28 +31,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="12" />
-          <entry key="py" value="17" />
+          <entry key="py" value="19" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="12" />
-          <entry key="Python" value="17" />
+          <entry key="Python" value="19" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="49" />
-          <entry key="py" value="12048" />
-          <entry key="txt" value="29" />
+          <entry key="py" value="14131" />
+          <entry key="txt" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="78" />
-          <entry key="Python" value="12048" />
+          <entry key="PLAIN_TEXT" value="136" />
+          <entry key="Python" value="14131" />
         </counts>
       </usages-collector>
     </session>
@@ -63,26 +62,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game_lib/sprites.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="-90">
+              <caret line="159" column="44" selection-start-line="159" selection-start-column="44" selection-end-line="159" selection-end-column="44" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#297#1474#0" />
-                <element signature="e#1508#1563#0" />
-                <element signature="e#1598#1797#0" />
-                <marker date="1553316550192" expanded="true" signature="5454:5460" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_play.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="981">
-              <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
-              <folding>
-                <element signature="e#2389#2725#0" />
+                <element signature="e#4888#4943#0" />
+                <marker date="1553421865728" expanded="true" signature="1902:1908" ph="..." />
+                <marker date="1553421865728" expanded="true" signature="7683:7702" ph="..." />
               </folding>
             </state>
           </provider>
@@ -91,11 +77,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game_lib/canvas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="367">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
               <folding>
-                <marker date="1553085832175" expanded="true" signature="31:36" ph="..." />
-                <marker date="1553085832175" expanded="true" signature="676:1190" ph="..." />
+                <marker date="1553422367647" expanded="true" signature="48:53" ph="..." />
+                <marker date="1553422367647" expanded="true" signature="1160:2233" ph="..." />
               </folding>
             </state>
           </provider>
@@ -104,8 +90,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/play_alone.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="75">
+              <caret line="5" column="28" selection-start-line="5" selection-end-line="5" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,8 +114,8 @@
       <find>players[0]</find>
       <find>(64, 64)</find>
       <find>screen</find>
-      <find>print</find>
       <find>__str__</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>player</replace>
@@ -146,10 +135,10 @@
         <option value="$PROJECT_DIR$/game_lib/mario.py" />
         <option value="$PROJECT_DIR$/game_lib/game_env.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/game_lib/canvas.py" />
         <option value="$PROJECT_DIR$/user_play.py" />
-        <option value="$PROJECT_DIR$/play_alone.py" />
         <option value="$PROJECT_DIR$/game_lib/sprites.py" />
+        <option value="$PROJECT_DIR$/play_alone.py" />
+        <option value="$PROJECT_DIR$/game_lib/canvas.py" />
       </list>
     </option>
   </component>
@@ -211,7 +200,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.user_play">
+  <component name="RunManager" selected="Python.self_play">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="game" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -305,7 +294,28 @@
       <option name="project" value="LOCAL" />
       <updated>1553067565787</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="WIP - self playing">
+      <created>1553413708053</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1553413708053</updated>
+    </task>
+    <task id="LOCAL-00004" summary="self playing with a bogus nn">
+      <created>1553419695481</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553419695481</updated>
+    </task>
+    <task id="LOCAL-00005" summary="small change">
+      <created>1553420297733</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1553420297733</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -317,7 +327,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3279483" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2924071" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2907916" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -336,7 +346,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3279483" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13408723" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2907916" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -356,16 +366,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Smoother gameplay" />
     <MESSAGE value="Fixed a bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug" />
+    <MESSAGE value="WIP - self playing" />
+    <MESSAGE value="self playing with a bogus nn" />
+    <MESSAGE value="small change" />
+    <option name="LAST_COMMIT_MESSAGE" value="small change" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1247971764/pygame/display.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="143" column="4" selection-start-line="143" selection-start-column="4" selection-end-line="146" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/Ph03nyx-Super-Mario-Mushroom-Super.png" />
     <entry file="file://$PROJECT_DIR$/images/super-mario-png-paper-mario-icon-256.png">
       <provider selected="true" editor-type-id="images" />
@@ -404,51 +410,60 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/game_lib/mario.py" />
-    <entry file="file:///usr/local/lib/python3.5/dist-packages/pygame/sprite.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1247971764/pygame/display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/play_alone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="381">
+          <caret line="163" column="4" selection-start-line="163" selection-start-column="4" selection-end-line="163" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user_play.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="981">
-          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+        <state relative-caret-position="306">
+          <caret line="120" column="36" lean-forward="true" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
           <folding>
             <element signature="e#2389#2725#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/pygame/sprite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="451" column="8" selection-start-line="451" selection-start-column="8" selection-end-line="451" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play_alone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" selection-start-line="5" selection-end-line="5" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game_lib/sprites.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="-90">
+          <caret line="159" column="44" selection-start-line="159" selection-start-column="44" selection-end-line="159" selection-end-column="44" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#297#1474#0" />
-            <element signature="e#1508#1563#0" />
-            <element signature="e#1598#1797#0" />
-            <marker date="1553316550192" expanded="true" signature="5454:5460" ph="..." />
+            <element signature="e#4888#4943#0" />
+            <marker date="1553421865728" expanded="true" signature="1902:1908" ph="..." />
+            <marker date="1553421865728" expanded="true" signature="7683:7702" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game_lib/canvas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="367">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
           <folding>
-            <marker date="1553085832175" expanded="true" signature="31:36" ph="..." />
-            <marker date="1553085832175" expanded="true" signature="676:1190" ph="..." />
+            <marker date="1553422367647" expanded="true" signature="48:53" ph="..." />
+            <marker date="1553422367647" expanded="true" signature="1160:2233" ph="..." />
           </folding>
         </state>
       </provider>
