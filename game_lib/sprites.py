@@ -156,6 +156,8 @@ class Mario(Sprite):
         self.score = 0
         self.game_over = False
 
+        self.init_nn(gene)
+
     def __repr__(self):
         return "{}_{}".format(self.__class__.__name__, self.id)
 
@@ -227,6 +229,9 @@ class Mario(Sprite):
 
     def play(self, obstacles) -> str:
         return self.bogus_nn(obstacles)
+
+    def init_nn(self, gene):
+        pass
 
     def bogus_nn(self, obstacles: List[Union[Mushroom, Fireball]]):
         state = ""
