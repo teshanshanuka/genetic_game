@@ -118,8 +118,8 @@ class ObstacleGroup(Group):
 
 
 class Mario(Sprite):
-    id = 0
     """    Mario!    """
+    id = 0
 
     def __init__(self, image, resize_to, ducked_image, ducked_resize_to, X, Y, resolution, horizontal_step, jump_vel,
                  gravity, max_fail_count, gene=None):
@@ -150,7 +150,8 @@ class Mario(Sprite):
         self.is_going_fw = False
         self.is_going_bw = False
         self.t_jump = 0
-        self.bogus = ((np.random.randint(-35,45),np.random.randint(75,85)),(np.random.randint(-5,5), np.random.randint(95,105)))
+        self.bogus = (
+        (np.random.randint(-35, 45), np.random.randint(75, 85)), (np.random.randint(-5, 5), np.random.randint(95, 105)))
 
         self.id = Mario.id
         Mario.id += 1
@@ -158,6 +159,11 @@ class Mario(Sprite):
         self.game_over = False
         self.fail_count = 0
         self.max_fail_count = max_fail_count
+        self.finished = False
+        self.last_action = "reset"
+        self.fitness = 0
+
+        self.NN = None
 
         self.init_nn(gene)
 
@@ -165,7 +171,7 @@ class Mario(Sprite):
         return "{}_{}".format(self.__class__.__name__, self.id)
 
     def reset_pos(self):
-        print(self, self.score)
+        print(self, "failed:", self.fail_count, "score:", self.score)
         x, _ = self.rect.topleft
         self.image = self.image1
         self.sizeX = self.sizeX1
@@ -176,11 +182,15 @@ class Mario(Sprite):
 
     def update(self, arg):
         if self.fail_count >= self.max_fail_count:
+            if not self.finished:
+                print(self, "is finished. score:", self.fitness)
+                self.finished = True
             return
         if self.game_over:
             self.reset_pos()
+            self.fitness = self.score
             self.score = 0
-            self.back_propegate_nn()
+            self.back_propagate_nn()
             self.game_over = False
             return
 
@@ -198,13 +208,7 @@ class Mario(Sprite):
             self.rect = self.rect2
             self.rect.topleft = (x, y + self.ydiff)
             self.is_ducked = True
-        # elif state == "fw":
-        #     self.is_going_fw = True
-        # elif state == "bw":
-        #     self.is_going_bw = True
-        # elif state == "halt":
-        #     self.is_going_fw = False
-        #     self.is_going_bw = False
+
         elif state == "jump" and not self.is_ducked:  # can't jump if ducked
             self.is_jumping = True
         elif state == "reset" and self.is_ducked:
@@ -215,11 +219,6 @@ class Mario(Sprite):
             self.rect = self.rect1
             self.rect.topleft = (x, y - self.ydiff)
             self.is_ducked = False
-
-        if self.is_going_fw:
-            self.rect.x = min(self.resolution[0] - self.sizeX, self.rect.x + self.horizontal_step)
-        elif self.is_going_bw:
-            self.rect.x = max(0, self.rect.x - self.horizontal_step)
 
         if self.is_jumping:
             new_y = self.init_Y - (self.jump_vel * self.t_jump - 0.5 * self.gravity * self.t_jump ** 2)
@@ -236,9 +235,6 @@ class Mario(Sprite):
     def play(self, obstacles) -> str:
         return self.bogus_nn(obstacles)
 
-    def init_nn(self, gene):
-        pass
-
     def bogus_nn(self, obstacles: List[Union[Mushroom, Fireball]]):
         state = ""
         for obstacle in obstacles:
@@ -254,9 +250,35 @@ class Mario(Sprite):
             if not state:
                 state = "reset"
 
+        self.last_action = state
         return state
 
-    def back_propegate_nn(self):
+    def respawn(self, gene):
+        self.fail_count = 0
+        self.finished = False
+        self.init_nn(gene)
+
+    def init_nn(self, gene):
+        # initialize the neural network
+        # set initial weights from the gene
+        pass
+
+    def nn(self, obstacles: List[Union[Mushroom, Fireball]]):
+        # return state using inputs obstacle.rect.x, obstacle.rect.y, obstacle.velocity
+        input_ = []
+        for obstacle in obstacles:
+            input_.extend([obstacle.rect.x, obstacle.rect.y, obstacle.velocity])
+        pass
+
+    def back_propagate_nn(self):
+        # update weights of the NN
+        # self.last_action contains last action ["jump","duck","reset"]
+        # calculate error and update the NN upon that
+        pass
+
+    def get_gene(self):
+        # return updated gene when called
+        # need to extract weights from the NN
         pass
 
 
