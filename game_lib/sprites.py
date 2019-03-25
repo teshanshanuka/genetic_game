@@ -258,6 +258,8 @@ class Mario(Sprite):
         self.finished = False
         self.init_nn(gene)
 
+# TODO: From here onwards
+
     def init_nn(self, gene):
         # initialize the neural network
         # set initial weights from the gene
@@ -281,6 +283,7 @@ class Mario(Sprite):
         # need to extract weights from the NN
         pass
 
+# TODO: to here
 
 class MarioGroup(Group):
     def __init__(self):

@@ -72,17 +72,11 @@ class GamePlay:
         print("\nfinal scores!")
         for player in self.players:
             print(player, player.fitness)
-        # self.game_over_screen()
+        self.game_over_screen()
 
-    # def game_over_screen(self):
-    #     _font = pygame.font.SysFont('Purisa', 50)
-    #     text_surface = _font.render('Game Over', False, (0, 0, 0))
-    #     self.screen.blit(text_surface, (self.screen_w // 2 - text_surface.get_width() // 2,
-    #                                     self.screen_h // 2 - text_surface.get_height() // 2))
-    #     _font2 = pygame.font.SysFont('Purisa', 20)
-    #     text_surface_2 = _font2.render('Press Enter to restart. ESC to quit', True, (0, 0, 0))
-    #     self.screen.blit(text_surface_2, (self.screen_w // 2 - text_surface_2.get_width() // 2,
-    #                                       self.screen_h // 2 + 30))
+    def game_over_screen(self):
+        # display some stats and shit
+        pass
 
     def respawn_players(self):
         genes = [player.get_gene() for player in self.players]
@@ -91,8 +85,13 @@ class GamePlay:
         for player, gene in zip(self.players, gene_pool):
             player.respawn(gene)
 
+
+# TODO: From here onwards
+
     def get_init_gene(self) -> np.ndarray:
+        # return a new gene for a new player
         pass
 
     def get_new_gene_pool(self, genes: List[np.ndarray]) -> List[np.ndarray]:
-        return [[]]*self.no_players
+        # do stuff and create new gene pool using existing genes `genes`
+        return [[]] * self.no_players # just to make the code work. remove when actual code is inserted
