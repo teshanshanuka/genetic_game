@@ -4,8 +4,6 @@
     <list default="true" id="d9297c3e-dad5-4a15-bffb-2625c6260325" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_lib/canvas.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_lib/canvas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_lib/sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_lib/sprites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_alone.py" beforeDir="false" afterPath="$PROJECT_DIR$/play_alone.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,85 +15,102 @@
     <session id="-1254370456">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="12" />
-          <entry key="py" value="21" />
+          <entry key="py" value="24" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="12" />
-          <entry key="Python" value="21" />
+          <entry key="Python" value="24" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="49" />
-          <entry key="py" value="15596" />
-          <entry key="txt" value="114" />
+          <entry key="dummy" value="62" />
+          <entry key="py" value="16288" />
+          <entry key="txt" value="132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="163" />
-          <entry key="Python" value="15596" />
+          <entry key="PLAIN_TEXT" value="194" />
+          <entry key="Python" value="16288" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game_lib/sprites.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="228" column="30" lean-forward="true" selection-start-line="228" selection-start-column="30" selection-end-line="231" selection-end-column="70" />
+            <state relative-caret-position="3780">
+              <caret line="256" column="15" selection-start-line="256" selection-start-column="15" selection-end-line="256" selection-end-column="15" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1553522996392" expanded="true" signature="1902:1908" ph="..." />
-                <marker date="1553522996392" expanded="true" signature="8001:8006" ph="..." />
-                <marker date="1553522996392" expanded="true" signature="8659:8750" ph="..." />
-                <marker date="1553522996392" expanded="true" signature="9158:9177" ph="..." />
+                <marker date="1553523808531" expanded="true" signature="1902:1908" ph="..." />
+                <marker date="1553523808531" expanded="true" signature="7521:7526" ph="..." />
+                <marker date="1553523808531" expanded="true" signature="8179:8297" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game_lib/canvas.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game_lib/canvas.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="84" selection-end-column="69" />
-              <folding>
-                <marker date="1553522996384" expanded="true" signature="48:53" ph="..." />
-                <marker date="1553522996384" expanded="true" signature="1243:2539" ph="..." />
-                <marker date="1553522996384" expanded="true" signature="3292:3440" ph="..." />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/game_lib/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/play_alone.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="229">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game_lib/evolution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="112" column="23" lean-forward="true" selection-start-line="112" selection-start-column="23" selection-end-line="112" selection-end-column="23" />
+              <folding>
+                <element signature="e#22#40#0" expanded="true" />
+                <marker date="1553621916369" expanded="true" signature="145:150" ph="..." />
+                <marker date="1553621916369" expanded="true" signature="145:184" ph="..." />
               </folding>
             </state>
           </provider>
@@ -120,6 +135,7 @@
       <find>print</find>
       <find>fini</find>
       <find>las</find>
+      <find>avgFitness</find>
     </findStrings>
     <replaceStrings>
       <replace>player</replace>
@@ -141,16 +157,19 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/user_play.py" />
         <option value="$PROJECT_DIR$/play_alone.py" />
-        <option value="$PROJECT_DIR$/game_lib/canvas.py" />
         <option value="$PROJECT_DIR$/game_lib/sprites.py" />
+        <option value="$PROJECT_DIR$/game_lib/va.py" />
+        <option value="$PROJECT_DIR$/game_lib/ga_game.py" />
+        <option value="$PROJECT_DIR$/game_lib/evolution.py" />
+        <option value="$PROJECT_DIR$/game_lib/canvas.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1407" />
-    <option name="y" value="-4" />
-    <option name="width" value="1879" />
-    <option name="height" value="1084" />
+    <option name="x" value="41" />
+    <option name="y" value="-28" />
+    <option name="width" value="1325" />
+    <option name="height" value="796" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -158,6 +177,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,7 +199,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,8 +207,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/game_lib" />
+      <recent name="$PROJECT_DIR$/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -218,6 +237,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="evolution" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game_lib/evolution.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -271,7 +311,13 @@
     <list>
       <item itemvalue="Python.user_play" />
       <item itemvalue="Python.self_play" />
+      <item itemvalue="Python.evolution" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.evolution" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -326,25 +372,32 @@
       <option name="project" value="LOCAL" />
       <updated>1553422380557</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="check 'TODO's">
+      <created>1553523843512</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1553523843512</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1406" y="-11" width="1881" height="1092" extended-state="6" />
+    <frame x="40" y="-11" width="1327" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10614224" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15130569" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32760474" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1933405" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27948305" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3279483" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32760474" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -381,7 +434,8 @@
     <MESSAGE value="self playing with a bogus nn" />
     <MESSAGE value="small change" />
     <MESSAGE value="multiple players on canvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="multiple players on canvas" />
+    <MESSAGE value="check 'TODO's" />
+    <option name="LAST_COMMIT_MESSAGE" value="check 'TODO's" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/images/Ph03nyx-Super-Mario-Mushroom-Super.png" />
@@ -450,38 +504,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/game_lib/va.py" />
+    <entry file="file://$PROJECT_DIR$/game_lib/sprites.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3780">
+          <caret line="256" column="15" selection-start-line="256" selection-start-column="15" selection-end-line="256" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1553523808531" expanded="true" signature="1902:1908" ph="..." />
+            <marker date="1553523808531" expanded="true" signature="7521:7526" ph="..." />
+            <marker date="1553523808531" expanded="true" signature="8179:8297" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_lib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/play_alone.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="229">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game_lib/canvas.py">
+    <entry file="file://$PROJECT_DIR$/game_lib/evolution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="84" selection-end-column="69" />
+        <state relative-caret-position="299">
+          <caret line="112" column="23" lean-forward="true" selection-start-line="112" selection-start-column="23" selection-end-line="112" selection-end-column="23" />
           <folding>
-            <marker date="1553522996384" expanded="true" signature="48:53" ph="..." />
-            <marker date="1553522996384" expanded="true" signature="1243:2539" ph="..." />
-            <marker date="1553522996384" expanded="true" signature="3292:3440" ph="..." />
+            <element signature="e#22#40#0" expanded="true" />
+            <marker date="1553621916369" expanded="true" signature="145:150" ph="..." />
+            <marker date="1553621916369" expanded="true" signature="145:184" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game_lib/sprites.py">
+    <entry file="file://$PROJECT_DIR$/game_lib/canvas.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="228" column="30" lean-forward="true" selection-start-line="228" selection-start-column="30" selection-end-line="231" selection-end-column="70" />
+        <state relative-caret-position="129">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1553522996392" expanded="true" signature="1902:1908" ph="..." />
-            <marker date="1553522996392" expanded="true" signature="8001:8006" ph="..." />
-            <marker date="1553522996392" expanded="true" signature="8659:8750" ph="..." />
-            <marker date="1553522996392" expanded="true" signature="9158:9177" ph="..." />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>

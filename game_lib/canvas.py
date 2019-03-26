@@ -1,3 +1,4 @@
+from game_lib.evolution import createNewPopulation
 from game_lib.sprites import *
 
 
@@ -80,7 +81,8 @@ class GamePlay:
 
     def respawn_players(self):
         genes = [player.get_gene() for player in self.players]
-        gene_pool = self.get_new_gene_pool(genes)
+        fitnesses = [player.fitness for player in self.players]
+        gene_pool = self.get_new_gene_pool(genes, fitnesses)
 
         for player, gene in zip(self.players, gene_pool):
             player.respawn(gene)
@@ -89,9 +91,10 @@ class GamePlay:
 # TODO: From here onwards
 
     def get_init_gene(self) -> np.ndarray:
-        # return a new gene for a new player
-        pass
+        return np.random.uniform(low=0.2, high=1.0, size=(210,))
 
-    def get_new_gene_pool(self, genes: List[np.ndarray]) -> List[np.ndarray]:
+    def get_new_gene_pool(self, genes: List[np.ndarray], fitnesses) -> List[np.ndarray]:
         # do stuff and create new gene pool using existing genes `genes`
-        return [[]] * self.no_players # just to make the code work. remove when actual code is inserted
+        print(genes, fitnesses)
+        return createNewPopulation(genes,fitnesses)
+        #return [[]] * self.no_players  # just to make the code work. remove when actual code is inserted
