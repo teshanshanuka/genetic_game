@@ -281,7 +281,9 @@ class Mario(Sprite):
     def get_gene(self):
         # return updated gene when called
         # need to extract weights from the NN
-        pass
+
+        # returning a random gene
+        np.random.uniform(low=0.2, high=1.0, size=(210,))
 
 # TODO: to here
 

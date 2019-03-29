@@ -6,8 +6,18 @@ from random import randint
 import random
 
 def createNewPopulation(population, fitnessArray):
-    # return new population
-    pass
+    populationSize = len(fitnessArray)
+    offSpringsPoolPropotion = 0.8
+    mutationProbability = 0.7
+
+    avgFitness = []
+    totalPopulationFitness = sum(fitnessArray)
+    parentPool = matingPool(population, fitnessArray, offSpringsPoolPropotion)
+    offSprings = offspringPool(parentPool)
+    mutatedOffsprings = mutatedPool(offSprings, mutationProbability)
+    avgFitness.append(totalPopulationFitness / populationSize)
+    population = nextGeneration(population, mutatedOffsprings,fitnessArray)
+    return  population
 
 # parent pool selection stochastic universal sampling
 def matingPool(population, fitnessArray, matingPoolPropotion):
