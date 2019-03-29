@@ -3,7 +3,7 @@ from game_lib.sprites import Mushroom, Fireball
 
 NO_PLAYERS = 5
 BACKPROPEGATION_UPDATE_COUNT = 5
-MAX_POINTS = 100
+MAX_POINTS = 1000
 
 resolution = (800, 400)
 caption = "Mario! :D"

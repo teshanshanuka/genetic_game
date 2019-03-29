@@ -2,6 +2,7 @@ import pygame
 import numpy as np
 from typing import Union, List
 
+import game_lib.ann as ann
 from pygame.sprite import Sprite, Group
 
 
@@ -151,7 +152,8 @@ class Mario(Sprite):
         self.is_going_bw = False
         self.t_jump = 0
         self.bogus = (
-        (np.random.randint(-35, 45), np.random.randint(75, 85)), (np.random.randint(-5, 5), np.random.randint(95, 105)))
+            (np.random.randint(-35, 45), np.random.randint(75, 85)),
+            (np.random.randint(-5, 5), np.random.randint(95, 105)))
 
         self.id = Mario.id
         Mario.id += 1
@@ -163,7 +165,7 @@ class Mario(Sprite):
         self.last_action = "reset"
         self.fitness = 0
 
-        self.NN = None
+        self.model = None
 
         self.init_nn(gene)
 
@@ -190,7 +192,7 @@ class Mario(Sprite):
             self.reset_pos()
             self.fitness = self.score
             self.score = 0
-            self.back_propagate_nn()
+            self.back_propagate_nn(arg)
             self.game_over = False
             return
 
@@ -233,57 +235,101 @@ class Mario(Sprite):
         self.score += 1
 
     def play(self, obstacles) -> str:
-        return self.bogus_nn(obstacles)
+        return self.nn(obstacles)
 
-    def bogus_nn(self, obstacles: List[Union[Mushroom, Fireball]]):
-        state = ""
-        for obstacle in obstacles:
-            if not obstacle.released:
-                continue
-
-            if isinstance(obstacle, Fireball):
-                if self.bogus[0][0] < (obstacle.rect.x - self.rect.x) < self.bogus[0][1]:
-                    state = "duck"
-            else:  # a mushroom
-                if self.bogus[1][0] < (obstacle.rect.x - self.rect.x) < self.bogus[1][1]:
-                    state = "jump"
-            if not state:
-                state = "reset"
-
-        self.last_action = state
-        return state
+    # def bogus_nn(self, obstacles: List[Union[Mushroom, Fireball]]):
+    #     state = ""
+    #     for obstacle in obstacles:
+    #         if not obstacle.released:
+    #             continue
+    #
+    #         if isinstance(obstacle, Fireball):
+    #             if self.bogus[0][0] < (obstacle.rect.x - self.rect.x) < self.bogus[0][1]:
+    #                 state = "duck"
+    #         else:  # a mushroom
+    #             if self.bogus[1][0] < (obstacle.rect.x - self.rect.x) < self.bogus[1][1]:
+    #                 state = "jump"
+    #         if not state:
+    #             state = "reset"
+    #
+    #     self.last_action = state
+    #     return state
 
     def respawn(self, gene):
         self.fail_count = 0
         self.finished = False
         self.init_nn(gene)
 
-# TODO: From here onwards
+    # TODO: From here onwards
 
     def init_nn(self, gene):
         # initialize the neural network
         # set initial weights from the gene
-        pass
+        self.model, self.layer1, self.out_layer = ann.init_ann(gene)
 
     def nn(self, obstacles: List[Union[Mushroom, Fireball]]):
         # return state using inputs obstacle.rect.x, obstacle.rect.y, obstacle.velocity
         input_ = []
         for obstacle in obstacles:
             input_.extend([obstacle.rect.x, obstacle.rect.y, obstacle.velocity])
-        pass
 
-    def back_propagate_nn(self):
+        x = np.reshape(np.array(input_), (1, 12))
+        y_prediction = ann.predict(self.model, x)
+
+        index = np.argmax(y_prediction)
+        # return the output of the ann as a string: 'jump'.
+        if index == 0:
+            y = 'jump'
+        elif index == 1:
+            y = 'duck'
+        else:
+            y = 'reset'
+
+        self.last_action = y
+        return y
+
+    def back_propagate_nn(self, obstacles: List[Union[Mushroom, Fireball]]):
         # update weights of the NN
         # self.last_action contains last action ["jump","duck","reset"]
         # calculate error and update the NN upon that
-        pass
+
+        input_ = []
+        for obstacle in obstacles:
+            input_.extend([obstacle.rect.x, obstacle.rect.y, obstacle.velocity])
+
+        x = np.reshape(np.array(input_), (1, 12))
+
+        if self.last_action == 'reset':
+            # x = np.array([0,0,1],dtype='float32')
+            # y = choice(['jump','duck']) shape (1,3)
+            # y = choice([[0,1,0],[1,0,0]])
+            y = [1, 1, 0]
+            y = np.array(y, dtype='float32')
+
+        elif self.last_action == 'duck':
+            # x = np.array([0,1,0],dtype='float32')
+            # y = choice(['jump','reset'])
+            # y = choice([[1,0,0],[0,0,1]])
+            y = [1, 0, 1]
+        else:
+            # x = np.array([1,0,0],dtype='float32')
+            # y = choice(['duck','reset'])
+            # y = choice([[0,1,0],[0,0,1]])
+            y = [0, 1, 1]
+
+            # x = [] # shape (1, 12)
+        y = np.reshape(np.array(y), (1, 3))
+
+        self.model = ann.train(self.model, x, y)
 
     def get_gene(self):
         # return updated gene when called
         # need to extract weights from the NN
+        l1_weights = self.layer1.get_weights()  # 12*14 nodes
+        ol_weights = self.out_layer.get_weights()  # 14*3 nodes
+        gene = np.append(l1_weights[0], ol_weights[0])
+        return np.array(gene)  # considering only weights here
 
-        # returning a random gene
-        np.random.uniform(low=0.2, high=1.0, size=(210,))
 
 # TODO: to here
 

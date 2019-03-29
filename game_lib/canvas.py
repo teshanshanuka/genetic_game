@@ -1,6 +1,8 @@
 from game_lib.evolution import createNewPopulation
 from game_lib.sprites import *
+from game_lib.ann import save_model
 
+import pickle
 
 class GamePlay:
     def __init__(self, no_players, mario_properties, obstacles: List[Union[Mushroom, Fireball]], resolution, max_score,
@@ -56,11 +58,13 @@ class GamePlay:
                 if not obstacle.released:
                     continue
                 for player in self.players:
-                    # if player.score >= self.max_score:
-                    #     print(player, "did it!!")
-                    #     self.finalze()
-                    #     return
-                    if player.rect.colliderect(obstacle.rect) or player.score >= self.max_score:
+                    if player.score >= self.max_score:
+                        print("__________________________________________________________________")
+                        print(player, "did it!!")
+                        self.finalze(player)
+                        return
+                    # if player.rect.colliderect(obstacle.rect) or player.score >= self.max_score:
+                    if player.rect.colliderect(obstacle.rect):
                         if player.score > 40:
                             player.game_over = True
 
@@ -79,11 +83,12 @@ class GamePlay:
         print("\nfinal scores!")
         for player in self.players:
             print(player, player.fitness)
-        self.game_over_screen()
+        self.game_over()
 
-    def game_over_screen(self):
-        """if anything is to display when game is over"""
-        pass
+    def game_over(self):
+        """have suff to do after game??"""
+        with open('fitnesses.pickle', 'wb') as fd:
+            pickle.dump(self.fitness_evol, fd)
 
     def respawn_players(self):
         genes = [player.get_gene() for player in self.players]
@@ -104,6 +109,7 @@ class GamePlay:
         self.fitness_evol.append(fitnesses)
         return createNewPopulation(genes, fitnesses)
 
-    def finalize(self):
+    def finalize(self, player: Mario):
         self.fitness_evol.append([player.fitness for player in self.players])
+        save_model(player.model)
         # do something with fitnesses ???
