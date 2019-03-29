@@ -34,6 +34,8 @@ class GamePlay:
         for obstacle in obstacles:
             self.obstacle_group.add(obstacle)
 
+        self.fitness_evol = []
+
     def play(self):
         pygame.init()
         pygame.font.init()
@@ -54,6 +56,10 @@ class GamePlay:
                 if not obstacle.released:
                     continue
                 for player in self.players:
+                    # if player.score >= self.max_score:
+                    #     print(player, "did it!!")
+                    #     self.finalze()
+                    #     return
                     if player.rect.colliderect(obstacle.rect) or player.score >= self.max_score:
                         if player.score > 40:
                             player.game_over = True
@@ -76,7 +82,7 @@ class GamePlay:
         self.game_over_screen()
 
     def game_over_screen(self):
-        # display some stats and shit
+        """if anything is to display when game is over"""
         pass
 
     def respawn_players(self):
@@ -94,7 +100,10 @@ class GamePlay:
         return np.random.uniform(low=0.2, high=1.0, size=(210,))
 
     def get_new_gene_pool(self, genes: List[np.ndarray], fitnesses) -> List[np.ndarray]:
-        # do stuff and create new gene pool using existing genes `genes`
-        print(genes, fitnesses)
-        return createNewPopulation(genes,fitnesses)
-        #return [[]] * self.no_players  # just to make the code work. remove when actual code is inserted
+        """do stuff and create new gene pool using existing genes `genes`"""
+        self.fitness_evol.append(fitnesses)
+        return createNewPopulation(genes, fitnesses)
+
+    def finalize(self):
+        self.fitness_evol.append([player.fitness for player in self.players])
+        # do something with fitnesses ???

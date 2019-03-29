@@ -1,6 +1,5 @@
 from game_lib.canvas import GamePlay
-from game_lib.sprites import Mario, Mushroom, Fireball, ObstacleGroup, MarioGroup
-import pygame
+from game_lib.sprites import Mushroom, Fireball
 
 NO_PLAYERS = 5
 BACKPROPEGATION_UPDATE_COUNT = 5
